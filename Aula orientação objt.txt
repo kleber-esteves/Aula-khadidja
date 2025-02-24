@@ -1,0 +1,333 @@
+**Aula: Introdução à Orientação a Objetos em Python**
+
+### Objetivo:
+O objetivo desta aula é fornecer uma introdução à programação orientada a objetos (POO) em Python. Ao final da aula, o aluno será capaz de compreender os conceitos fundamentais de POO, como classes, objetos, atributos, métodos e herança, e aplicá-los em projetos simples.
+
+---
+
+### Estrutura da Aula:
+
+#### **1. Introdução à Programação Orientada a Objetos (POO)**
+- **O que é POO?**
+  - Explicação do paradigma de programação baseado em objetos.
+  - Comparação com paradigmas tradicionais, como a programação procedural.
+  - Benefícios da POO: Reusabilidade, modularidade, organização, etc.
+
+- **Conceitos Fundamentais**
+  - Classe: Plano de construção de objetos.
+  - Objeto: Instância de uma classe.
+  - Atributos: Características ou propriedades de um objeto.
+  - Métodos: Funções que descrevem o comportamento de um objeto.
+  - Encapsulamento, Herança, Polimorfismo e Abstração (introdução breve).
+
+---
+
+#### **2. Criando a Primeira Classe**
+- **O que é uma classe em Python?**
+  - Sintaxe básica para criação de uma classe.
+  - Exemplos de atributos e métodos dentro de uma classe.
+
+```python
+class Carro:
+    def __init__(self, modelo, cor):
+        self.modelo = modelo
+        self.cor = cor
+
+    def exibir_informacoes(self):
+        print(f"Modelo: {self.modelo}, Cor: {self.cor}")
+
+# Criando um objeto (instância) da classe Carro
+meu_carro = Carro("Fusca", "azul")
+meu_carro.exibir_informacoes()
+```
+
+- **Explicação do código:**
+  - `__init__`: Método construtor, responsável por inicializar os atributos do objeto.
+  - `self`: Referência ao próprio objeto.
+  - Método `exibir_informacoes`: Exibe as informações de um carro.
+
+---
+
+#### **3. Criando e Manipulando Objetos**
+- **Instanciando Objetos**
+  - O que significa instanciar um objeto de uma classe.
+  - Como utilizar métodos de instância e acessar atributos.
+
+```python
+carro1 = Carro("Civic", "preto")
+carro1.exibir_informacoes()
+```
+
+- **Alterando Atributos**
+  - Como modificar atributos diretamente e com métodos.
+
+```python
+carro1.modelo = "Corolla"
+carro1.exibir_informacoes()
+```
+
+---
+
+#### **4. Encapsulamento**
+- **O que é Encapsulamento?**
+  - Definição de encapsulamento em POO: ocultação de dados internos de um objeto.
+  - Como tornar os atributos privados (com `_` ou `__`) e usar getters e setters.
+
+```python
+class Carro:
+    def __init__(self, modelo, cor):
+        self.__modelo = modelo
+        self.__cor = cor
+
+    def obter_modelo(self):
+        return self.__modelo
+
+    def alterar_cor(self, nova_cor):
+        self.__cor = nova_cor
+```
+
+---
+
+#### **5. Herança em Python**
+- **O que é Herança?**
+  - Explicação da herança e como ela permite que uma classe herde comportamentos e atributos de outra classe.
+  - Exemplo de herança entre classes:
+
+```python
+class Veiculo:
+    def __init__(self, modelo, cor):
+        self.modelo = modelo
+        self.cor = cor
+
+    def exibir_informacoes(self):
+        print(f"Modelo: {self.modelo}, Cor: {self.cor}")
+
+class Carro(Veiculo):
+    def __init__(self, modelo, cor, portas):
+        super().__init__(modelo, cor)
+        self.portas = portas
+
+    def exibir_informacoes(self):
+        super().exibir_informacoes()
+        print(f"Portas: {self.portas}")
+```
+
+- **Explicação do código:**
+  - `super()`: Chama o método da classe pai (superclasse).
+  - Sobrescrita de métodos.
+
+---
+
+#### **6. Polimorfismo**
+- **O que é Polimorfismo?**
+  - Definição de polimorfismo: a habilidade de usar métodos de forma genérica, mas com comportamentos diferentes dependendo da classe.
+  - Exemplo de polimorfismo:
+
+```python
+class Moto(Veiculo):
+    def exibir_informacoes(self):
+        print(f"Modelo: {self.modelo}, Cor: {self.cor}, Tipo: Moto")
+
+# Criando objetos das classes Carro e Moto
+carro = Carro("Fusca", "vermelho", 4)
+moto = Moto("Titan", "preto")
+
+# Ambos podem chamar exibir_informacoes
+for veiculo in [carro, moto]:
+    veiculo.exibir_informacoes()
+```
+
+---
+
+#### **7. Exercício Prático**
+- **Desafio:**
+  - Criar uma classe `Pessoa` com atributos `nome` e `idade`.
+  - Criar um método `cumprimentar` que exibe uma mensagem de saudação.
+  - Criar uma classe `Aluno` que herda de `Pessoa` e tem um atributo adicional `nota_final`.
+  - Criar um método `exibir_resultado` que exibe a nota e uma mensagem dependendo da aprovação.
+
+---
+
+#### **8. Conclusão e Referências**
+- **Recapitulando a Aula**
+  - Importância de entender POO para organização e escalabilidade do código.
+  - Conceitos abordados: classes, objetos, atributos, métodos, herança, polimorfismo e encapsulamento.
+
+- **Referências**
+  - [Documentação oficial do Python sobre classes](https://docs.python.org/3/tutorial/classes.html)
+  - [Python OOP Tutorial (w3schools)](https://www.w3schools.com/python/python_classes.asp)
+  - [Livro: "Python Fluente" de Luciano Ramalho](https://www.casadocodigo.com.br/products/livro-python-fluente)
+
+---
+
+**BoxText - Dicas:**
+1. Pratique criar diferentes classes e explorar a herança e polimorfismo.
+2. Tente implementar mais métodos e experimentos de encapsulamento para melhor controle dos dados.
+
+Essa estrutura serve como uma introdução sólida, abordando desde o básico até conceitos mais avançados, permitindo que o aluno construa uma base sólida em POO com Python.**Aula: Introdução à Orientação a Objetos em Python**
+
+### Objetivo:
+O objetivo desta aula é fornecer uma introdução à programação orientada a objetos (POO) em Python. Ao final da aula, o aluno será capaz de compreender os conceitos fundamentais de POO, como classes, objetos, atributos, métodos e herança, e aplicá-los em projetos simples.
+
+---
+
+### Estrutura da Aula:
+
+#### **1. Introdução à Programação Orientada a Objetos (POO)**
+- **O que é POO?**
+  - Explicação do paradigma de programação baseado em objetos.
+  - Comparação com paradigmas tradicionais, como a programação procedural.
+  - Benefícios da POO: Reusabilidade, modularidade, organização, etc.
+
+- **Conceitos Fundamentais**
+  - Classe: Plano de construção de objetos.
+  - Objeto: Instância de uma classe.
+  - Atributos: Características ou propriedades de um objeto.
+  - Métodos: Funções que descrevem o comportamento de um objeto.
+  - Encapsulamento, Herança, Polimorfismo e Abstração (introdução breve).
+
+---
+
+#### **2. Criando a Primeira Classe**
+- **O que é uma classe em Python?**
+  - Sintaxe básica para criação de uma classe.
+  - Exemplos de atributos e métodos dentro de uma classe.
+
+```python
+class Carro:
+    def __init__(self, modelo, cor):
+        self.modelo = modelo
+        self.cor = cor
+
+    def exibir_informacoes(self):
+        print(f"Modelo: {self.modelo}, Cor: {self.cor}")
+
+# Criando um objeto (instância) da classe Carro
+meu_carro = Carro("Fusca", "azul")
+meu_carro.exibir_informacoes()
+```
+
+- **Explicação do código:**
+  - `__init__`: Método construtor, responsável por inicializar os atributos do objeto.
+  - `self`: Referência ao próprio objeto.
+  - Método `exibir_informacoes`: Exibe as informações de um carro.
+
+---
+
+#### **3. Criando e Manipulando Objetos**
+- **Instanciando Objetos**
+  - O que significa instanciar um objeto de uma classe.
+  - Como utilizar métodos de instância e acessar atributos.
+
+```python
+carro1 = Carro("Civic", "preto")
+carro1.exibir_informacoes()
+```
+
+- **Alterando Atributos**
+  - Como modificar atributos diretamente e com métodos.
+
+```python
+carro1.modelo = "Corolla"
+carro1.exibir_informacoes()
+```
+
+---
+
+#### **4. Encapsulamento**
+- **O que é Encapsulamento?**
+  - Definição de encapsulamento em POO: ocultação de dados internos de um objeto.
+  - Como tornar os atributos privados (com `_` ou `__`) e usar getters e setters.
+
+```python
+class Carro:
+    def __init__(self, modelo, cor):
+        self.__modelo = modelo
+        self.__cor = cor
+
+    def obter_modelo(self):
+        return self.__modelo
+
+    def alterar_cor(self, nova_cor):
+        self.__cor = nova_cor
+```
+
+---
+
+#### **5. Herança em Python**
+- **O que é Herança?**
+  - Explicação da herança e como ela permite que uma classe herde comportamentos e atributos de outra classe.
+  - Exemplo de herança entre classes:
+
+```python
+class Veiculo:
+    def __init__(self, modelo, cor):
+        self.modelo = modelo
+        self.cor = cor
+
+    def exibir_informacoes(self):
+        print(f"Modelo: {self.modelo}, Cor: {self.cor}")
+
+class Carro(Veiculo):
+    def __init__(self, modelo, cor, portas):
+        super().__init__(modelo, cor)
+        self.portas = portas
+
+    def exibir_informacoes(self):
+        super().exibir_informacoes()
+        print(f"Portas: {self.portas}")
+```
+
+- **Explicação do código:**
+  - `super()`: Chama o método da classe pai (superclasse).
+  - Sobrescrita de métodos.
+
+---
+
+#### **6. Polimorfismo**
+- **O que é Polimorfismo?**
+  - Definição de polimorfismo: a habilidade de usar métodos de forma genérica, mas com comportamentos diferentes dependendo da classe.
+  - Exemplo de polimorfismo:
+
+```python
+class Moto(Veiculo):
+    def exibir_informacoes(self):
+        print(f"Modelo: {self.modelo}, Cor: {self.cor}, Tipo: Moto")
+
+# Criando objetos das classes Carro e Moto
+carro = Carro("Fusca", "vermelho", 4)
+moto = Moto("Titan", "preto")
+
+# Ambos podem chamar exibir_informacoes
+for veiculo in [carro, moto]:
+    veiculo.exibir_informacoes()
+```
+
+---
+
+#### **7. Exercício Prático**
+- **Desafio:**
+  - Criar uma classe `Pessoa` com atributos `nome` e `idade`.
+  - Criar um método `cumprimentar` que exibe uma mensagem de saudação.
+  - Criar uma classe `Aluno` que herda de `Pessoa` e tem um atributo adicional `nota_final`.
+  - Criar um método `exibir_resultado` que exibe a nota e uma mensagem dependendo da aprovação.
+
+---
+
+#### **8. Conclusão e Referências**
+- **Recapitulando a Aula**
+  - Importância de entender POO para organização e escalabilidade do código.
+  - Conceitos abordados: classes, objetos, atributos, métodos, herança, polimorfismo e encapsulamento.
+
+- **Referências**
+  - [Documentação oficial do Python sobre classes](https://docs.python.org/3/tutorial/classes.html)
+  - [Python OOP Tutorial (w3schools)](https://www.w3schools.com/python/python_classes.asp)
+  - [Livro: "Python Fluente" de Luciano Ramalho](https://www.casadocodigo.com.br/products/livro-python-fluente)
+
+---
+
+**BoxText - Dicas:**
+1. Pratique criar diferentes classes e explorar a herança e polimorfismo.
+2. Tente implementar mais métodos e experimentos de encapsulamento para melhor controle dos dados.
+
+Essa estrutura serve como uma introdução sólida, abordando desde o básico até conceitos mais avançados, permitindo que o aluno construa uma base sólida em POO com Python.
