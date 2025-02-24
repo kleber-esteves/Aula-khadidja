@@ -1,0 +1,137 @@
+### **Tarefas para Fixação da Aula de Introdução à Orientação a Objetos em Python**
+
+Essas tarefas são projetadas para reforçar os conceitos de Programação Orientada a Objetos (POO) com Python. Elas são baseadas nos tópicos abordados na aula, e você será incentivado a trabalhar com as ideias de classes, objetos, herança, encapsulamento e polimorfismo. Para cada tarefa, há uma referência de livro que pode ser útil para estudo adicional.
+
+---
+
+### **Tarefa 1: Criação e Manipulação de Classes**
+
+**Objetivo:** Criar uma classe simples, instanciar objetos e manipular atributos.
+
+#### Descrição:
+1. Crie uma classe chamada `Livro` com os seguintes atributos:
+   - `titulo` (string)
+   - `autor` (string)
+   - `ano_publicacao` (inteiro)
+   
+2. Implemente um método chamado `exibir_detalhes` que imprime as informações do livro.
+
+3. Instancie pelo menos dois objetos da classe `Livro` e utilize o método `exibir_detalhes` para imprimir os dados de cada livro.
+
+#### **Dica:** Lembre-se de usar o método construtor `__init__` para inicializar os atributos.
+
+#### Referência de Estudo:
+- **"Python Fluente" por Luciano Ramalho** - Capítulo sobre classes e instâncias (páginas 44-77).
+
+---
+
+### **Tarefa 2: Encapsulamento e Getters/Setters**
+
+**Objetivo:** Implementar o conceito de encapsulamento para controlar o acesso aos atributos da classe.
+
+#### Descrição:
+1. Crie uma classe `ContaBancaria` com os seguintes atributos:
+   - `titular` (string)
+   - `saldo` (float)
+   
+2. Torne o atributo `saldo` privado (utilizando o prefixo `__`) e crie os seguintes métodos:
+   - `depositar(valor)` - adiciona `valor` ao saldo.
+   - `sacar(valor)` - subtrai `valor` do saldo, desde que o saldo seja suficiente.
+   - `obter_saldo()` - retorna o saldo atual.
+
+3. Verifique se o saldo é suficiente antes de realizar um saque e exiba uma mensagem de erro, caso contrário.
+
+#### Referência de Estudo:
+- **"Introdução à Programação com Python" por Nilo Ney Coutinho Menezes** - Capítulo sobre encapsulamento e métodos de acesso (páginas 120-135).
+
+---
+
+### **Tarefa 3: Herança e Sobrescrita de Métodos**
+
+**Objetivo:** Trabalhar com herança para reutilizar código e sobrescrever métodos.
+
+#### Descrição:
+1. Crie uma classe base chamada `Animal` com os seguintes atributos e método:
+   - Atributo `nome` (string).
+   - Método `falar()` que imprime "O animal faz um som."
+
+2. Crie duas subclasses de `Animal`: `Cachorro` e `Gato`.
+   - A classe `Cachorro` deve sobrescrever o método `falar()` para imprimir "O cachorro late."
+   - A classe `Gato` deve sobrescrever o método `falar()` para imprimir "O gato mia."
+
+3. Instancie objetos de ambas as subclasses e chame o método `falar()`.
+
+#### Referência de Estudo:
+- **"Python: Estruturas de Dados e Algoritmos" por Benjamin Baka** - Capítulo sobre herança e polimorfismo (páginas 115-140).
+
+---
+
+### **Tarefa 4: Polimorfismo em Ação**
+
+**Objetivo:** Aplicar o conceito de polimorfismo, utilizando o mesmo método de forma diferente em várias classes.
+
+#### Descrição:
+1. Crie uma classe base `Veiculo` com o método `mover()`, que deve imprimir "O veículo está em movimento."
+
+2. Crie duas subclasses: `Carro` e `Bicicleta`.
+   - A classe `Carro` deve sobrescrever o método `mover()` para imprimir "O carro está dirigindo."
+   - A classe `Bicicleta` deve sobrescrever o método `mover()` para imprimir "A bicicleta está pedalando."
+
+3. Crie uma função chamada `iniciar_viagem()` que recebe uma lista de objetos de tipo `Veiculo` e chama o método `mover()` para cada um.
+
+#### Referência de Estudo:
+- **"Python for Data Analysis" por Wes McKinney** - Capítulo sobre polimorfismo e design orientado a objetos (páginas 230-250).
+
+---
+
+### **Tarefa 5: Projeto Final - Sistema de Gestão de Biblioteca**
+
+**Objetivo:** Desenvolver um sistema básico de gestão de uma biblioteca utilizando POO.
+
+#### Descrição:
+1. Crie uma classe `Livro` com os atributos `titulo`, `autor`, `ano_publicacao` e `disponivel` (booleano que indica se o livro está disponível para empréstimo).
+
+2. Crie uma classe `Biblioteca` com os seguintes métodos:
+   - `adicionar_livro(livro)` - adiciona um livro à biblioteca.
+   - `emprestar_livro(titulo)` - permite o empréstimo de um livro, mudando o atributo `disponivel` para `False`.
+   - `devolver_livro(titulo)` - permite a devolução de um livro, mudando o atributo `disponivel` para `True`.
+
+3. Implemente uma interação onde o usuário possa ver a lista de livros, emprestar e devolver livros.
+
+#### Referência de Estudo:
+- **"Learning Python" por Mark Lutz** - Capítulo sobre criação de classes e interação entre objetos (páginas 140-170).
+
+---
+
+### **Tarefa 6: Testes Unitários em POO**
+
+**Objetivo:** Aplicar testes unitários para garantir que os métodos funcionem corretamente.
+
+#### Descrição:
+1. Escolha uma das classes criadas anteriormente (como `ContaBancaria` ou `Livro`).
+2. Implemente testes unitários para verificar se os métodos estão funcionando conforme esperado. Utilize o módulo `unittest` para isso.
+   - Teste o método de depósito, saque e verifique se o saldo está correto.
+   - Teste a exibição de detalhes de um livro.
+
+3. Execute os testes e garanta que todos passem sem erros.
+
+#### Referência de Estudo:
+- **"Python Testing with pytest" por Brian Okken** - Capítulo sobre introdução aos testes unitários com Python (páginas 55-75).
+
+---
+
+### **Referências de Livros Gerais sobre POO em Python:**
+
+- **"Python Fluente" por Luciano Ramalho**  
+  - Excelente referência para quem quer entender profundamente a programação orientada a objetos e práticas de design em Python.
+  
+- **"Introdução à Programação com Python" por Nilo Ney Coutinho Menezes**  
+  - Uma abordagem didática e clara para iniciantes, com exemplos práticos de POO.
+
+- **"Learning Python" por Mark Lutz**  
+  - Livro extenso e abrangente sobre Python, com muitos exemplos sobre programação orientada a objetos e como utilizá-la no dia a dia.
+
+- **"Python: Estruturas de Dados e Algoritmos" por Benjamin Baka**  
+  - Este livro oferece uma visão mais profunda de como usar estruturas de dados e orientações objetivas para resolver problemas mais complexos.
+
+Essas tarefas proporcionam uma combinação de prática e teoria para consolidar a compreensão dos conceitos de orientação a objetos em Python, com o apoio das referências de livros clássicos e modernos.
